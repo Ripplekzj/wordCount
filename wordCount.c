@@ -7,13 +7,13 @@ void countW(FILE *fp);
 int main(int argc,char *argv[])             
 {
 	FILE *fp;
-	fp = fopen(argv[2],"r");//¶ÁÈ¡ÎÄ¼ş 
+	fp = fopen(argv[2],"r");//read-only mode 
 
-		if(strcmp(argv[1],"-c") == 0)//Í³¼Æ×Ö·ûÊı
+		if(strcmp(argv[1],"-c") == 0)//-c mode 
 		{
 			countC(fp);
 		}
-		else if(strcmp(argv[1],"-w") == 0)//Í³¼Æµ¥´ÊÊı
+		else if(strcmp(argv[1],"-w") == 0)//-w mode 
 		{
 			countW(fp);
 		}
@@ -23,24 +23,24 @@ int main(int argc,char *argv[])
 	return 0;
 }
 void countC(FILE *fp){
-	int ch;
-	int chars = 0;
-	while((ch = fgetc(fp))!= EOF){
-		chars++;
-		printf("%c",ch);
+	int ch1;
+	int count = 0;
+	while((ch1 = fgetc(fp))!= EOF){
+		count++;
+		printf("%c",ch1);
 	}
-	printf("\ntotal chars: %d", chars);
+	printf("æ€»è®¡å­—ç¬¦æ•°: %d\n", count);
 }
 
 void countW(FILE *fp){
-	int ch;
-	int words = 1;
-	while((ch = fgetc(fp)) != EOF){
+	int ch1;
+	int count = 1;
+	while((ch1 = fgetc(fp)) != EOF){
 		//printf("%c", ch);
-		if(ch == ',' || ch == ' '){
-			words++;
+		if(ch1 == ',' || ch1 == ' '){
+			count++;
 		}
 	}
-	printf("\ntotal words: %d", words);
+	printf("æ€»è®¡å•è¯æ•°: %d\n", count);
 }
 
