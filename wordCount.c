@@ -27,20 +27,18 @@ void countC(FILE *fp){
 	int count = 0;
 	while((ch1 = fgetc(fp))!= EOF){
 		count++;
-		printf("%c",ch1);
 	}
-	printf("æ€»è®¡å­—ç¬¦æ•°: %d\n", count);
+	printf("×Ü¼Æ×Ö·ûÊı: %d\n", count);
 }
 
 void countW(FILE *fp){
 	int ch1;
 	int count = 1;
 	while((ch1 = fgetc(fp)) != EOF){
-		//printf("%c", ch);
 		if(ch1 == ',' || ch1 == ' '){
 			count++;
 		}
 	}
-	printf("æ€»è®¡å•è¯æ•°: %d\n", count);
+	printf("×Ü¼Æµ¥´ÊÊı: %d\n", count);
 }
 
