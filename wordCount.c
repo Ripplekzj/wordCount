@@ -28,7 +28,7 @@ void countC(FILE *fp){
 	while((ch1 = fgetc(fp))!= EOF){//使用fgetc（）获取字符，字符非EOF则计数器加一
 		count++;
 	}
-	printf("�ܼ��ַ���: %d\n", count);
+	printf("总计字符数: %d\n", count);
 }
 
 void countW(FILE *fp){
@@ -39,6 +39,6 @@ void countW(FILE *fp){
 			count++;
 		}
 	}
-	printf("�ܼƵ�����: %d\n", count);
+	printf("总计单词数: %d\n", count);
 }
 
